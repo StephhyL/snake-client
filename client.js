@@ -13,13 +13,13 @@ const connect = function () {
     conn.write("Name: PBJ");
     let delay = 0;
 
-    const movement = ["Move: right", "Move: up", "Move: up", "Move: left", "Move: down"];
-    movement.forEach((movement) => {
-      setTimeout(() => {
-        conn.write(movement);
-      }, delay)
-      delay += 1000;
-    });
+    // const movement = ["Move: right", "Move: up", "Move: up", "Move: left", "Move: down"];
+    // movement.forEach((movement) => {
+    //   setTimeout(() => {
+    //     conn.write(movement);
+    //   }, delay)
+    //   delay += 1000;
+    // });
   
   })
 
