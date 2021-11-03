@@ -11,6 +11,7 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
     conn.write("Name: PBJ");
+    conn.write("Say: HELLO WORLD!");
     // let delay = 0;
 
     // const movement = ["Move: right", "Move: up", "Move: up", "Move: left", "Move: down"];
