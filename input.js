@@ -2,10 +2,29 @@
 // stores the active TCP connection object
 let connection;
 
+
+// setup interface to handle user input from stdin
+
+const setupInput = (conn) => {
+
+  connection = conn //conecct();
+
+  const stdin = process.stdin;
+  stdin.setRawMode(true);
+  stdin.setEncoding("utf8");
+  stdin.resume(); // always thinking about input. 
+
+
+  stdin.on("data", handleUserInput);
+
+  return stdin;
+};
+
 const handleUserInput = function (key) {
-  if (key === '\u0003') {
-    process.exit();
-  }
+
+  // if (key === '\u0003') {
+  //   process.exit();
+  // }
   // if (key === 'w') {
   //   console.log("Move: up");
   // }
@@ -26,24 +45,11 @@ const handleUserInput = function (key) {
       console.log("Move: right");
       connection.write("Move: right");
       break;
+    case 'x':
+    case '\u0003':
+      process.exit();
   }
 
 };
 
-// setup interface to handle user input from stdin
-
-const setupInput = (conn) => {
-
-  connection = conn //conecct();
-
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-
-  stdin.on("data", handleUserInput);
-  
-  return stdin;
-};
-
-module.exports = {setupInput};
+module.exports = { setupInput };
