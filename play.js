@@ -6,5 +6,8 @@ const {setupInput} = require('./input')
 
 
 console.log("Connecting....");
-connect(); // calling the connect function which has everything inside
-setupInput(); // calling the setUpInput function
+//  connect(); // calling the connect function which has everything inside
+
+
+// let connectResult = connect(); 
+setupInput(connect()); // calling the setUpInput function
